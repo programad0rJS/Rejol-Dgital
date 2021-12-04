@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <style>
+        .Rejol {
+            font-family: sans-serif;
+            font-size: 60px;
+            text-shadow: 0px 0px 1px #333;
+            color: white;
+        }
+
+        .Rejol-Contenedor {
+            background: rgb(12, 119, 206);
+            padding: 85px;
+            max-width: 350px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 10%;
+
+        }
+
+        .Fecha {
+            letter-spacing: 10px;
+            font-size: 15px;
+
+        }
+    </style>
+</head>
+
+<body onload="MostraRejol()">
+
+
+
+    <div id="Rejol" class="Rejol">
+        <div class="Rejol-Contenedor" id="Contenedor">
+            <div id="Horas"></div>
+            <div id="Fecha" class="Fecha">Con Javascript</div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function MostraRejol() {
+            const Fecha = new Date();
+            let Hora = Formato(Fecha.getHours());
+            let Minutos = Formato(Fecha.getMinutes());
+            let Segundo = Formato(Fecha.getSeconds());
+
+
+            
+
+
+            let Resultado = `${Hora} : ${Minutos} : ${Segundo}`;
+
+            document.getElementById('Horas').innerHTML = Resultado;
+
+            
+
+
+        }
+
+
+        function Formato(Hora) {
+            if (Hora < 10) {
+                Hora = '0' + Hora
+
+            }
+
+            return Hora;
+        }
+
+        
+
+
+        setInterval(MostraRejol, 1000)
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+
+    https://www.youtube.com/watch?v=uYSg4EqOnzY 2:47
+    https://github.com/josuefeo123/Blog-Personal/upload
+    https://my.freenom.com/clientarea.php?managedns=maferyzhonyu.ga&domainid=1123248018
+
+
+ -->
